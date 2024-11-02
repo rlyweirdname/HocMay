@@ -4,6 +4,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "uvicorn bert_project:app --host 0.0.0.0 --port $PORT --log-level debug"
+    "startCommand": "uvicorn bert-project:app --host 0.0.0.0 --port $PORT --workers 1 --limit-concurrency 1"
   }
 }

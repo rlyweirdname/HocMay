@@ -14,13 +14,13 @@ import re
 
 class BilingualBERTGenerator:
     def __init__(self):
-        # Load XLM-RoBERTa large for better performance on both languages
-        self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-large", force_download=True)
-        self.model = AutoModelForMaskedLM.from_pretrained("xlm-roberta-large", attn_implementation="eager", force_download=True)
+        # Load XLM-RoBERTa base for server optimizing
+        self.tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base", force_download=False)
+        self.model = AutoModelForMaskedLM.from_pretrained("xlm-roberta-base", attn_implementation="eager", force_download=False, low_cpu_mem_usage=True)
         
         # Initialize Vietnamese-specific model
-        self.vn_tokenizer = AutoTokenizer.from_pretrained("vinai/phobert-base", force_download=True)
-        self.vn_model = AutoModelForMaskedLM.from_pretrained("vinai/phobert-base", attn_implementation="eager", force_download=True)
+        self.vn_tokenizer = AutoTokenizer.from_pretrained("vinai/phobert-base", force_download=False)
+        self.vn_model = AutoModelForMaskedLM.from_pretrained("vinai/phobert-base", attn_implementation="eager", force_download=False, low_cpu_mem_usage=True)
         
         # Define mask patterns
         self.mask_patterns = [
