@@ -8,6 +8,3 @@ matplotlib==3.7.1
 seaborn==0.12.2
 langdetect==1.0.9
 pydantic==2.4.2
-
-# Procfile
-web: uvicorn main:app --host 0.0.0.0 --port $PORT
