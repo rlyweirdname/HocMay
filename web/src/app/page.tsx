@@ -160,7 +160,7 @@ export default function BERTTextGenerator() {
         <Textarea 
           value={template}
           onChange={(e) => setTemplate(e.target.value)}
-          placeholder="Enter a sentence with [MASK] or a sentence to analyze"
+          placeholder="Enter a sentence with [MASK]/<mask> (_____, {...}, [___] work too) or a sentence to analyze"
           className="mb-4"
         />
 
