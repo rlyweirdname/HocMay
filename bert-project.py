@@ -187,7 +187,7 @@ class TextGenerationRequest(BaseModel):
     num_suggestions: int = 3
     
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "template": "Today the weather is _____",
                 "num_suggestions": 3
